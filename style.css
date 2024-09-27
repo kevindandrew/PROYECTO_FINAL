@@ -6,8 +6,8 @@
 
 body {
     background-color: hsl(199, 81%, 94%);
-    font-family: 'Plus Jakarta Sans', sans-serif; /* Aplica la fuente a todo el cuerpo */
-    font-size: 16px; /* Tamaño de párrafo */
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 16px;
 }
 
 .row {
@@ -153,7 +153,7 @@ p {
 .inrad:checked + label::before {
     border-color: hsl(61, 70%, 52%);
     background-color: hsl(61, 70%, 52%);
-    box-shadow: inset 0 0 0 2px white; /* Espacio interno para el "check" */
+    box-shadow: inset 0 0 0 2px white; 
 }
 
 .inrad:focus + label::before {
