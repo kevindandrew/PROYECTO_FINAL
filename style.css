@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(199, 81%, 94%);
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Aplica la fuente a todo el cuerpo */
+    font-size: 16px; /* Tamaño de párrafo */
+}
+
+.row {
+    background-color: white;
+    max-width: 850px;
+    min-width: 450px;
+    overflow: hidden;
+}
+
+.arriba {
+    background-color: white;
+    padding: 1rem 2rem;
+}
+.limpiar{
+    background-color:white;
+    border: none;
+    margin-bottom: 1rem;
+}
+.titulo1{
+    font-size: 1.5rem;
+}
+.input-group-text {
+    background-color: hsl(199, 81%, 94%);
+}
+
+.con1 {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    padding: 0 10px;
+    margin-bottom: 1rem;
+    height: 3rem;
+    border-radius: 5px;
+    
+}
+
+.con1 .form-check-input {
+    margin-right: 10px;
+}
+
+.calculadora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(201, 54%, 16%);
+    height: 3rem;
+    width: 80%;
+    border: none;
+    border-radius: 2rem;
+    font-weight:900;
+}
+
+.abajo {
+    background-color: rgb(19, 48, 64);
+    color: white;
+    max-width: 100%;
+    overflow: hidden;
+    /* border-bottom-left-radius: 80px; */
+}
+
+h2, label, span{
+    font-weight: 700; 
+}
+
+p {
+    font-weight: 500; 
+}
+.pasiva{
+    padding: 1.5rem;
+}
+
+.pasiva > p{
+    color: rgba(255, 255, 255, 0.432);
+}
+.activa{
+    padding: 3rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+.activa > p{
+    color: hsl(203,24%,62%);
+    font-size: 14px;
+}
+
+.pagos{
+    background-color: hsl(202,56%,12%);
+    border-radius: 8px;
+    border-top: 5px solid hsl(61, 70%, 52%);;
+    min-height: 250px;
+    padding: 5px 30px; 
+    margin-bottom: 50px;
+    font-size: calc(100% - 0.1vw);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+}
+.mes{
+    margin-bottom: 25px;
+    border-bottom: 1px solid hsla(202, 24%, 62%, 0.199);;
+}
+.titulo_act{
+    margin-bottom: 20px;
+}
+.par_act{
+    margin-bottom: 30px;
+}
+.titulo_mensual{
+    color: hsl(203,24%,62%);
+    font-size: 15px;
+}
+.form-control:focus{
+    border-color: hsl(61,70%,52%);
+    border-width: 1.5px;
+    box-shadow: 0 0 0 6rem rgba(50, 205, 50, 0.25);
+}
+
+.input-group:focus-within .input-group-text {
+    background-color: hsl(61,70%,52%);
+}
+
+.inrad {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inrad + label::before {
+    height: 20px;
+    width: 20px;
+    border: 2px solid hsl(201, 54%, 16%);
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.inrad:checked + label::before {
+    border-color: hsl(61, 70%, 52%);
+    background-color: hsl(61, 70%, 52%);
+    box-shadow: inset 0 0 0 2px white; /* Espacio interno para el "check" */
+}
+
+.inrad:focus + label::before {
+    outline: none;
+}
+
+
+.pago_mensual{
+    font-size: 50px;
+    color: hsl(61, 70%, 52%);
+    margin-bottom: 15px;
+}
+.pag_tot{
+    color: hsl(203,24%,62%);
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.pago_total{
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+@media (min-width: 768px){
+    .row{
+        border-radius: 1.5rem;
+    }
+    .abajo{
+        border-bottom-left-radius: 80px;
+    }
+    .calculadora >img{
+        margin-right: 1rem;
+    }
+    .pasiva >p{
+        font-size: 13px;
+    }
+    .pasiva >h2{
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+/* Agrega esto a tu CSS existente */
+.active {
+    background-color: hsl(60,72%,93%);
+    border-color: hsl(61, 70%, 52%);
+}
+.form-check:hover{
+    border: 2px solid hsl(61, 70%, 52%);
+}
+
+.errores_locos{
+    background-color: red;
+    border-color: red;
+}
+.errores_locos2{
+    border-color: red;
+}
+.emergencia{
+    color: red;
+    font-weight: 100;
+    margin-top: 0;
+}
+.hidden{
+    display: none;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row">
+            <div class="arriba col-12 mb-4 col-md-6 mt-md-4 mb-md-3">
+                <div class="d-md-flex d-md-inlines mb-md-4">
+                    <h2 class="titulo1">Mortgage Calculator</h2>
+                    <button class="mt-md-2 ms-md-5 text-decoration-underline limpiar">Clear All</button>
+                </div>
+
+                <form id="mortgageForm">
+                    <!-- Mortgage Amount -->
+                    <p class="mb-2">Mortgage Amount</p>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text border-end-0" id="addon-wrapping">Bs</span>
+                        <input type="text" class="form-control border-start-0 shadow-none" aria-label="Mortgage Amount"
+                            aria-describedby="addon-wrapping" name="prestamo" id="inp1">
+                    </div>
+                    <span class="emergencia hidden" id="emer1">this field is required</span>
+                    <span class="emergencia hidden" id="emer11">this field is number</span>
+                    
+                    <div class="d-md-flex mt-3">
+                        <!-- Mortgage Term -->
+                        <div class="me-md-4">
+                            <p class="mb-2">Mortgage Term</p>
+                            <div class="input-group ">
+                                <input type="text" class="form-control border-end-0 shadow-none" aria-label="Mortgage Term"
+                                    aria-describedby="basic-addon2" name="años" id="inp2">
+                                <span class="input-group-text border-start-0" id="basic-addon2">years</span>
+                            </div>
+                            <span class="emergencia hidden" id="emer2">this field is required</span>
+                            <span class="emergencia hidden" id="emer22">this field is number</span>
+                        </div>
+                        
+                        <!-- Interest Rate -->
+                        <div>
+                            <p class="mb-2">Interest Rate</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control border-end-0 shadow-none" aria-label="Interest Rate"
+                                    aria-describedby="basic-addon2" name="interes" id="inp3">
+                                <span class="input-group-text border-start-0" id="basic-addon3">%</span>
+                            </div>
+                            <span class="emergencia hidden" id="emer3">this field is required</span>
+                            <span class="emergencia hidden" id="emer33">this field is number</span>
+                        </div>
+                    </div>
+                
+                    <!-- Mortgage Type -->
+                    <p class="mt-3">Mortgage Type</p>
+                    <div class="form-check mb-3 con1 align-content-center align-items-center d-flex">
+                        <input class="inrad" type="radio" name="mortgageType" id="repayment" value="repayment">
+                        <label class="form-check-label justify-content-center align-content-center align-items-center d-flex" for="repayment">
+                            Repayment
+                        </label>
+                    </div>
+                
+                    <div class="form-check con1">
+                        <input class="inrad" type="radio" name="mortgageType" id="interestOnly" value="interestOnly">
+                        <label class="form-check-label justify-content-center align-content-center align-items-center d-flex" for="interestOnly">
+                            Interest Only
+                        </label>
+                    </div>
+                    <span class="emergencia hidden" id="emer44">this field is required</span>
+                    <!-- Botón de cálculo -->
+                    <button type="submit" class="calculadora mt-md-4">
+                        <img src="./assets/images/icon-calculator.svg" alt="">
+                        Calculate Repayments
+                    </button>
+                </form>
+                
+            </div>
+
+            <div class="abajo col-12 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="pasiva d-flex flex-column align-items-center justify-content-center">
+                    <img src="./assets/images/illustration-empty.svg" alt="">
+                    <h2>Results shown here</h2>
+                    <p> Complete the form and click “calculate repayments” to see what
+                        your monthly repayments would be.</p>
+                </div>
+                <div class="activa d-flex flex-column justify-content-center p-3 d-none">
+                    <h5 class="titulo_act">Your results</h5>
+                    <p class="par_act">Your results are shown below based on the information you provided.
+                        To adjust the results, edit the form and click “calculate repayments” again.</p>
+                    <div class="pagos w-100 d-flex flex-column justify-content-center">
+                        <div class="mes">
+                            <p class="titulo_mensual">Your monthly repayments</p>
+                            <h2 class="pago_mensual">Bs1,792.74</h2>
+                        </div>
+                        <div class="total"></div>
+                        <p class="pag_tot">Total you'll repay over the term</p>
+                        <h3 class="pago_total">Bs539,322.94</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
