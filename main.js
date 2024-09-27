@@ -144,7 +144,7 @@ form.addEventListener("submit", (e) => {
             let pagoMensual=calcularPagoMensual(mon_prest,tas_int,plazo)
 
            let totalPago = (pagoMensual * plazo * 12).toFixed(2);
-            let interes = calcularInteres(mon_prest, tas_int, plazo);
+            let interes = calcularInteres(totalPago,mon_prest);
             document.querySelector(".titulo_mensual").textContent="interes"
             document.querySelector(".pago_mensual").textContent =  `Bs${parseFloat(interes).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
             document.querySelector(".pago_total").textContent = `Bs${parseFloat(totalPago).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
@@ -209,9 +209,9 @@ function calcularPagoMensual(P, int_anual, n_años) {
 
     return M.toFixed(2);  
 }
-function calcularInteres(P, int_anual, n_años) {
-    int_anual=int_anual/100
-    return (P * int_anual * n_años).toFixed(2);  
+function calcularInteres(p_total,capital) {
+   
+    return (p_total-capital).toFixed(2);  
 }
 
 

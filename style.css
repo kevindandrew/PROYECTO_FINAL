@@ -194,7 +194,7 @@ p {
         font-weight: 500;
     }
 }
-/* Agrega esto a tu CSS existente */
+
 .active {
     background-color: hsl(60,72%,93%);
     border-color: hsl(61, 70%, 52%);
