@@ -145,14 +145,15 @@ form.addEventListener("submit", (e) => {
 
            let totalPago = (pagoMensual * plazo * 12).toFixed(2);
             let interes = calcularInteres(totalPago,mon_prest);
+            let interestotal=calcularIntTotal(interes,plazo);
             document.querySelector(".titulo_mensual").textContent="interes"
-            document.querySelector(".pago_mensual").textContent =  `Bs${parseFloat(interes).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
-            document.querySelector(".pago_total").textContent = `Bs${parseFloat(totalPago).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
+            document.querySelector(".pago_mensual").textContent =  `Bs${parseFloat(interestotal).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
+            document.querySelector(".pago_total").textContent = `Bs${parseFloat(interes).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
             document.querySelector(".activa").classList.remove("d-none");
             document.querySelector(".pasiva").classList.add("d-none");
         }
 
-        
+
     }
 });
 
@@ -213,6 +214,11 @@ function calcularInteres(p_total,capital) {
    
     return (p_total-capital).toFixed(2);  
 }
+function calcularIntTotal(interes,años) {
+    let meses=años*12;
+    let resultado=interes/meses
+    return resultado;
+} 
 
 
 document.querySelector('.limpiar').addEventListener('click', function() {
